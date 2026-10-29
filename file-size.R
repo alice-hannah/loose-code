@@ -5,7 +5,7 @@ dir_size <- function(dir) {
   list.files(dir, recursive = TRUE, full.names = TRUE) |>
     purrr::map(file.size) |>
     purrr::list_c() |>
-    sum()
+    sum(na.rm = TRUE)
 }
 
 dir <- ""
